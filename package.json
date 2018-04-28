@@ -1,0 +1,30 @@
+{
+  "name": "tracker-server",
+  "version": "1.0.0",
+  "description": "Track Server is beckend of integration with butbucket and others repository of manager issues, PR e new features",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israeleriston/tracker-server.git"
+  },
+  "keywords": [],
+  "author": "Israel Ériston <israel.eriston@gmail.com> (https://github.com/israeleriston/migration-tools)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/israeleriston/tracker-server/issues"
+  },
+  "homepage": "https://github.com/israeleriston/tracker-server#readme",
+  "dependencies": {
+    "boom": "^7.2.0",
+    "config": "^1.30.0",
+    "fastify": "^1.3.1",
+    "fastify-jwt": "^0.2.1",
+    "joi": "^13.2.0",
+    "knex": "^0.14.6",
+    "lodash-fp": "^0.10.4",
+    "ramda": "^0.25.0"
+  }
+}
