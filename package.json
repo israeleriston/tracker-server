@@ -5,7 +5,9 @@
   "main": "src/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --experimental-modules ./src/index.mjs"
+    "start": "npm run dev",
+    "dev": "nodemon --experimental-modules ./src/index.mjs",
+    "test": ""
   },
   "repository": {
     "type": "git",
