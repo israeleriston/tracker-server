@@ -1,5 +1,5 @@
-import knexFile from '../../knexfile'
-import fastifyKnex from 'fastify-knexjs'
+const knexFile = require('../../knexfile')
+const fastifyKnex = require('fastify-knexjs')
 
 const db = knexFile[process.env.NODE_ENV || 'development']
 

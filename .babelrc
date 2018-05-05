@@ -1,0 +1,10 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "current"
+      },
+      "plugins": ["@babel/plugin-proposal-pipeline-operator", "stage-0"]
+    }]
+  ]
+}
