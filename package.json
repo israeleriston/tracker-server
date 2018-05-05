@@ -4,10 +4,16 @@
   "description": "Track Server is beckend of integration with butbucket and others repository of manager issues, PR e new features",
   "main": "src/index.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint && npm run unit",
     "start": "npm run dev",
     "dev": "nodemon --experimental-modules ./src/index.mjs",
-    "test": ""
+    "lint": "standard | snazzy",
+    "unit": "ava src/test/**/*.test.mjs src/test/**/*.e2e.mjs -v --color --tap --serial",
+    "coverage": "nyc report --reporter=html",
+    "coveralls": "nyc ava src/test/**/*.test.mjs src/test/**/*.e2e.mjs",
+    "bench": "branchcmp -r 2 -g -s \"npm run benchmark\"",
+    "benchmark": "npx concurrently -k -s first \"node ./examples/simple.js\" \"npx autocannon -c 100 -d 5 -p 10 localhost:3000/\""
+
   },
   "repository": {
     "type": "git",
@@ -37,12 +43,16 @@
     "ramda": "^0.25.0"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
+    "coveralls": "^3.0.1",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.1.0",
-    "nodemon": "^1.17.3"
+    "nodemon": "^1.17.3",
+    "nyc": "^11.7.1",
+    "standart": "^6.1.0"
   }
 }
