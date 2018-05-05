@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Israel Ériston <israel.eriston@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/israeleriston/tracker-server/issues"
   },
