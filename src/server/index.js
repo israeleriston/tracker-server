@@ -1,9 +1,19 @@
-const fastify = require('fastify')()
+
+'use strict'
+
 const boom = require('fastify-boom')
 const formbody = require('fastify-formbody')
 const jwt = require('fastify-jwt')
 const auth = require('fastify-auth')
 const helmet = require('fastify-helmet')
+const split = require('split2')
+const stream = split(JSON.parse)
+const fastify = require('fastify')({
+  logger: {
+    level: 'info',
+    stream: stream
+  }
+})
 
 const registerRoutes = require('./routes')
 
