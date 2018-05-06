@@ -5,7 +5,7 @@ const service = require('./service')
 
 const routes = [
   { method: 'get',
-    path: '/user',
+    path: '/project',
     handler: middleware.find,
     service: [ service.find, service.getOne ]
   }

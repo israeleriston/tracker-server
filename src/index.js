@@ -11,5 +11,5 @@ fastify.listen(process.env.PORT || 3000, err => {
   if (err) {
     throw err
   }
-  log('server listening on %s:%s', fastify.server.address().address, fastify.server.address().port)
+  log('Server Listening on %o:%o', fastify.server.address().address, fastify.server.address().port)
 })
