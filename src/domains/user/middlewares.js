@@ -1,6 +1,6 @@
 const find = (req, reply) => {
-  console.log('Middleware')
-  return reply.send({ 'Middleware.js': 'ok' })
+  req.logger('teste do debug porra! ')
+  return reply.send({ 'Middleware.js ta vindo aqui !!': 'ok' })
 }
 
 module.exports = {
