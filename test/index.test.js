@@ -1,3 +1,5 @@
-const tap = require('tap')
+const test = require('ava')
 
-tap.pass('testing passed!')
+test('first test ', t => {
+  t.pass()
+})

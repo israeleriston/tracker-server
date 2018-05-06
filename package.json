@@ -8,10 +8,10 @@
     "start": "npm run dev",
     "log": "DEBUG=App*,-not_this",
     "lint": "standard | snazzy",
-    "unit": "tap -j4 test/*.test.js test/*/*.test.js ",
-    "test": "npm run lint && npm run unit ",
-    "coverage": "npm run unit -- --cov --coverage-report=html",
-    "coveralls": "npm run unit --  --cov",
+    "unit": "ava test/*.test.js test/*/*.test.js -v",
+    "test": "cross-env NODE_ENV=test npm run lint && npm run unit ",
+    "coverage:report": "nyc npm test --reporter=html --reporter=text ",
+    "coverage": "npm run test && nyc ava src/**/*.js --cov",
     "bench": "branchcmp -r 2 -g -s \"npm run benchmark\"",
     "benchmark": "npx concurrently -k -s first \"node ./examples/simple.js\" \"npx autocannon -c 100 -d 5 -p 10 localhost:3000/\""
   },
@@ -48,7 +48,9 @@
     "supports-color": "^5.4.0"
   },
   "devDependencies": {
+    "ava": "^0.25.0",
     "coveralls": "^3.0.1",
+    "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.11.0",
@@ -59,7 +61,6 @@
     "nyc": "^11.7.1",
     "pre-commit": "^1.2.2",
     "snazzy": "^7.1.1",
-    "standard": "^11.0.1",
-    "tap": "^11.1.4"
+    "standard": "^11.0.1"
   }
 }

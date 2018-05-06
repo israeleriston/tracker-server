@@ -7,14 +7,8 @@ const jwt = require('fastify-jwt')
 const auth = require('fastify-auth')
 const helmet = require('fastify-helmet')
 const logger = require('./logger')
-const split = require('split2')
-const stream = split(JSON.parse)
-const fastify = require('fastify')({
-  logger: {
-    level: 'info',
-    stream: stream
-  }
-})
+
+const fastify = require('fastify')()
 
 const registerRoutes = require('./routes')
 
