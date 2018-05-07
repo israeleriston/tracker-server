@@ -1,0 +1,29 @@
+
+version: '2'
+services:
+  nginx:
+    build: ./nginx
+    links:
+      - app:app
+    ports:
+      - "80:80"
+
+  app:
+    build: ./app
+    links:
+      - db
+    environment:
+      PORT: 3000
+      DB_CONNECTION: postgres://user:secure1@db/test_db
+      NODE_ENV: "production"
+    ports:
+      - "3000:3000"
+
+  db:
+    image: postgres:9.3
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=secure1
+      - POSTGRES_DB=test_db
+    ports:
+      - "5432:5432"
