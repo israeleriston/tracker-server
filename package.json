@@ -4,15 +4,16 @@
   "description": "Track Server is beckend of integration with butbucket and others repository of manager issues, PR e new features",
   "main": "src/index.js",
   "scripts": {
-    "dev": "npm run log nodemon src/index.js ",
-    "start": "npm run dev",
+    "dev": "yarn run log nodemon src/index.js ",
+    "start": "yarn run dev",
     "log": "DEBUG=App*,-not_this",
     "lint": "standard | snazzy",
     "unit": "ava -v",
-    "test": "npm run lint && npm run coverage",
-    "coverage": "nyc --reporter=html --reporter=text npm run unit",
-    "coveralls": "nyc --reporter=html --reporter=text npm run unit -- ",
-    "bench": "branchcmp -r 2 -g -s \"npm run benchmark\"",
+    "test": "yarn run lint && yarn run coverage",
+    "coverage": "nyc --reporter=html --reporter=text yarn run unit",
+    "coveralls": "nyc --reporter=html --reporter=text yarn run unit -- ",
+    "upgrade:latest": "yarn upgrade-interactive --latest",
+    "bench": "branchcmp -r 2 -g -s \"yarn run benchmark\"",
     "benchmark": "npx concurrently -k -s first \"node ./examples/simple.js\" \"npx autocannon -c 100 -d 5 -p 10 localhost:3000/\""
   },
   "repository": {
@@ -43,7 +44,7 @@
     "fastify-register-routes": "^1.0.0",
     "joi": "^13.2.0",
     "knex": "^0.14.6",
-    "lodash-fp": "^0.10.4",
+    "lodash": "^4.17.10",
     "ramda": "^0.25.0",
     "supports-color": "^5.4.0"
   },
