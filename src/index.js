@@ -1,4 +1,5 @@
 'use strict'
+
 const log = require('debug')('App')
 const base = require('app-module-path')
 const server = require('./server')
